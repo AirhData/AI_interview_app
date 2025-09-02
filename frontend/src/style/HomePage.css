@@ -1,0 +1,271 @@
+/* Dashboard Home Content */
+.home-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flow-root;
+    padding: 0.75rem 0.5rem;
+}
+
+/* Alert de bienvenue */
+.welcome-alert {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: #dbeafe;
+    border: 1px solid #93c5fd;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    min-width: 280px;
+    max-width: 350px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.alert-icon {
+    color: #2563eb;
+    font-size: 1.25rem;
+}
+
+.alert-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1e40af;
+    font-weight: 500;
+}
+
+.alert-close {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    transition: color 0.2s ease;
+}
+
+.alert-close:hover {
+    color: #374151;
+}
+
+/* Header du dashboard */
+.dashboard-header {
+    /* L'espacement est maintenant appliqué ici pour un meilleur contrôle. */
+    padding-top: 1.5rem;
+}
+
+.dashboard-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    /* Il est crucial de garder la marge du haut à zéro. */
+    margin-top: 0;
+}
+
+.dashboard-subtitle {
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Section Commencer */
+.getting-started-section {
+    margin-bottom: 3rem;
+    /* Cet espace sépare le header des 3 étapes */
+    margin-top: 2rem;
+}
+
+.section-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1.5rem;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.step-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.step-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #6366f1;
+}
+
+.step-header {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.step-number {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    margin: 1rem auto 1.5rem;
+}
+
+.step-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e2127;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.step-description {
+    color: #7c8087;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.step-arrow {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #6b7280;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.step-card:hover .step-arrow {
+    color: #6366f1;
+    transform: translateX(4px);
+}
+
+/* Section Support */
+.support-section {
+    margin-top: 3rem;
+}
+
+.support-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    text-align: left;
+    max-width: 500px;
+}
+
+.support-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.75rem;
+}
+
+.support-description {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-btn {
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.contact-btn:hover {
+    background-color: #4f46e5;
+    transform: translateY(-1px);
+}
+
+/* Styles pour les autres sections (ex: Paramètres) */
+.settings-content {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation pour l'alerte */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-title {
+        font-size: 1.875rem;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .step-card {
+        padding: 1.5rem;
+    }
+    
+    .step-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-alert {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 1rem;
+        width: calc(100% - 2rem);
+    }
+}

@@ -1,0 +1,95 @@
+/* src/style/JobsTab.css */
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Votre composant Carte.css peut être fusionné ici si vous le souhaitez */
+/* Pour l'instant, on style directement .job-card */
+.job-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.job-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827; /* Couleur de texte plus foncée */
+    margin-bottom: 0.75rem;
+}
+
+.job-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+    font-size: 0.875rem;
+}
+
+.job-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.job-info-item i {
+    color: #6366f1; /* --primary-color */
+    width: 16px;
+    text-align: center;
+}
+
+.job-actions {
+    margin-top: auto; /* Pousse les boutons en bas de la carte */
+    display: flex;
+    gap: 0.75rem;
+}
+
+.job-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.job-btn.view-offer {
+    background-color: #6366f1;
+    color: white;
+}
+.job-btn.view-offer:hover {
+    background-color: #4f46e5;
+}
+
+.job-btn.start-interview {
+    background-color: #10b981;
+    color: white;
+}
+.job-btn.start-interview:hover {
+    background-color: #059669;
+}
+
+.jobs-loading, .jobs-error {
+    text-align: center;
+    padding: 3rem;
+    color: #6b7280;
+}

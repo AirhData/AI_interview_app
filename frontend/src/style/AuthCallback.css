@@ -1,0 +1,146 @@
+/* AuthCallback.css - Styles pour la page de callback d'authentification */
+
+.auth-callback-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8fafc;
+  padding: 1rem;
+}
+
+.auth-callback-card {
+  padding: 3rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.auth-callback-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* États de l'icône */
+.auth-callback-icon.processing {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.auth-callback-icon.success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  animation: successPulse 0.6s ease-out;
+}
+
+.auth-callback-icon.error {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  animation: errorShake 0.6s ease-out;
+}
+
+.auth-callback-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.auth-callback-message {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.auth-callback-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.auth-callback-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.auth-callback-button:active {
+  transform: translateY(0);
+}
+
+
+@keyframes successPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes errorShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-callback-card {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  .auth-callback-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .auth-callback-title {
+    font-size: 1.25rem;
+  }
+  
+  .auth-callback-button {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .auth-callback-container {
+    padding: 0.5rem;
+  }
+  
+  .auth-callback-card {
+    padding: 2rem;
+  }
+}

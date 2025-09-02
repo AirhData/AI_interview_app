@@ -1,0 +1,237 @@
+/* AuthPopup.css - Styles pour le popup d'authentification */
+
+/* Overlay de fond */
+.auth-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: authFadeIn 0.2s ease-out;
+  padding: 1rem;
+}
+
+/* Container principal du popup */
+.auth-popup-container {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  animation: authSlideUp 0.3s ease-out;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header du popup */
+.auth-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 1rem 2rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.auth-popup-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.auth-popup-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.auth-popup-close:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  transform: scale(1.1);
+}
+
+/* Corps du popup */
+.auth-popup-body {
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.auth-popup-description {
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Boutons Google */
+.auth-google-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-google-btn:last-child {
+  margin-bottom: 0;
+}
+
+/* Bouton Se connecter */
+.login-btn {
+  background: white;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+.login-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Bouton S'inscrire */
+.signup-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.signup-btn:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Icône Google */
+.google-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animations */
+@keyframes authFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes authSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* États de focus pour l'accessibilité */
+.auth-popup-close:focus,
+.auth-google-btn:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-popup-overlay {
+    padding: 0.5rem;
+  }
+  
+  .auth-popup-container {
+    max-width: none;
+    border-radius: 12px;
+  }
+  
+  .auth-popup-header {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+  }
+  
+  .auth-popup-body {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .auth-popup-title {
+    font-size: 1.25rem;
+  }
+  
+  .auth-google-btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .auth-popup-container {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+/* Animation de sortie (optionnelle) */
+.auth-popup-overlay.closing {
+  animation: authFadeOut 0.2s ease-out;
+}
+
+.auth-popup-container.closing {
+  animation: authSlideDown 0.2s ease-out;
+}
+
+@keyframes authFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes authSlideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+}
